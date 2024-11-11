@@ -6,4 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run tests 
-        run: salloc -N 1 -n 1 -t 0:10:00 ./test.py
+        run: |
+          module load anaconda3/2024.6
+          salloc -N 1 -n 1 -t 0:10:00 ./test.py
